@@ -1,0 +1,92 @@
+type Query {
+     getRandomUserFromCamel: RandomUserResponse
+}
+
+type RandomUserResponse {
+    results: [User]
+    info: Info
+}
+
+type User {
+    gender: String
+    name: Name
+    location: Location
+    email: String
+    login: Login
+    dob: DateOfBirth
+    registered: Registered
+    phone: String
+    cell: String
+    id: Id
+    picture: Picture
+    nat: String
+}
+
+type Name {
+    title: String
+    first: String
+    last: String
+}
+
+type Location {
+    street: Street
+    city: String
+    state: String
+    country: String
+    postcode: String
+    coordinates: Coordinates
+    timezone: Timezone
+}
+
+type Street {
+    number: Int
+    name: String
+}
+
+type Coordinates {
+    latitude: String
+    longitude: String
+}
+
+type Timezone {
+    offset: String
+    description: String
+}
+
+type Login {
+    uuid: String
+    username: String
+    password: String
+    salt: String
+    md5: String
+    sha1: String
+    sha256: String
+}
+
+type DateOfBirth {
+    date: String
+    age: Int
+}
+
+type Registered {
+    date: String
+    age: Int
+}
+
+type Id {
+    name: String
+    value: String
+}
+
+type Picture {
+    large: String
+    medium: String
+    thumbnail: String
+}
+
+type Info {
+    seed: String
+    results: Int
+    page: Int
+    version: String
+}
