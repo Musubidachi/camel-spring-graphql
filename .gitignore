@@ -1,0 +1,74 @@
+# General
+.DS_Store
+.idea/
+*.iml
+*.log
+*.swp
+*.bak
+*.tmp
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.out
+*.gz
+*.7z
+*.tgz
+*.bz2
+*.log
+
+# Maven
+.mvn/
+target/
+!target/*.jar
+
+# Eclipse
+*.classpath
+*.project
+*.settings/
+
+# IntelliJ IDEA
+*.idea/
+*.iws
+*.ipr
+*.iml
+out/
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+Thumbs.db
+*.DS_Store
+
+# Spring Boot specific
+*.springBeans
+
+# Application properties
+*.properties
+*.yml
+application-*.yml
+application-*.properties
+
+# Coverage and test results
+coverage/
+.jacoco/
+*.exec
+
+test-results/
+**/target/surefire-reports/
+
+# Database
+*.db
+*.mv.db
+*.h2.db
+
+# Build artifacts
+build/
+classes/
+!target/*.jar
