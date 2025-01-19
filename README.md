@@ -43,8 +43,8 @@ This project demonstrates the integration of various modern technologies to buil
 ### Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/Musubidachi/camel-spring-graphql.git
+cd camel-spring-graphql
 ```
 
 ### Import the Project into Eclipse
@@ -90,7 +90,7 @@ Use GraphQL to query and manipulate data.
 
 GraphiQL provides an in-browser interface for testing GraphQL queries.
 
-- URL: [http://localhost:8080/graphql-altair](http://localhost:8080/graphql-altair)
+- URL: [http://localhost:8080/graphiql?path=/graphql](http://localhost:8080/graphiql?path=/graphql)
 
 ### Example Endpoints
 
