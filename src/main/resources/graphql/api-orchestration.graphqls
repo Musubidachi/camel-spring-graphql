@@ -1,5 +1,12 @@
 type Query {
-     getRandomUserFromCamel: RandomUserResponse
+    getRandomUserFromCamel: RandomUserResponse
+    sayHello(message: String!): SoapResponse
+    orchestrateServices(message: String!): OrchestratedResponse
+}
+
+type OrchestratedResponse {
+    randomUserResponse: RandomUserResponse
+    soapResponse: String
 }
 
 type RandomUserResponse {
@@ -89,4 +96,9 @@ type Info {
     results: Int
     page: Int
     version: String
+}
+
+# SOAP service output
+type SoapResponse {
+    response: String
 }

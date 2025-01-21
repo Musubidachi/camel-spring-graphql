@@ -1,4 +1,7 @@
-# Demo Project: Spring Boot + GraphQL + Camel + Swagger
+
+---
+
+# Demo Project: Spring Boot + GraphQL + Camel + Swagger + SOAP
 
 ## Overview
 
@@ -8,6 +11,7 @@ This project demonstrates the integration of various modern technologies to buil
 - **GraphQL**: Query and manipulate your API data efficiently.
 - **Spring Boot**: Framework for building RESTful services.
 - **Apache Camel**: Route orchestration and integration.
+- **SOAP**: Integration with external SOAP web services.
 - **GraphiQL**: In-browser GraphQL testing interface.
 
 ## Features
@@ -15,6 +19,7 @@ This project demonstrates the integration of various modern technologies to buil
 - REST endpoints documented with Swagger.
 - GraphQL queries and mutations.
 - Apache Camel routes for integration.
+- SOAP service integration using Camel CXF.
 - GraphiQL interface for testing GraphQL queries.
 
 ---
@@ -26,6 +31,7 @@ This project demonstrates the integration of various modern technologies to buil
 - **GraphQL**
 - **Swagger (SpringDoc OpenAPI)**
 - **Apache Camel 4.9.0**
+- **SOAP (CXF)**
 - **GraphiQL**
 - **Maven**
 
@@ -92,31 +98,52 @@ GraphiQL provides an in-browser interface for testing GraphQL queries.
 
 - URL: [http://localhost:8080/graphiql?path=/graphql](http://localhost:8080/graphiql?path=/graphql)
 
-### Example Endpoints
+---
 
-#### REST Endpoint:
+## Example Queries
 
-- **GET**: `/api/example/get-data`
-- **POST**: `/api/example/post-data`
-
-#### GraphQL Query:
-
-Example Query:
+### GraphQL Query for Random User and SOAP Responses:
 
 ```graphql
-{
-  getRandomUserResponse {
-    results {
-      name {
-        first
-        last
-      }
-      email
+query {
+    orchestrateServices(message: "Fetch Both") {
+        randomUserResponse {
+            results {
+                name {
+                    first
+                    last
+                }
+            }
+        }
+        soapResponse
     }
-    info {
-      results
+}
+```
+
+### GraphQL Query for Only SOAP Response:
+
+```graphql
+query {
+    orchestrateServices(message: "HelloSOAP") {
+        soapResponse
     }
-  }
+}
+```
+
+### GraphQL Query for Only Random User:
+
+```graphql
+query {
+    orchestrateServices(message: "Fetch Random User") {
+        randomUserResponse {
+            results {
+                name {
+                    first
+                    last
+                }
+            }
+        }
+    }
 }
 ```
 
@@ -140,6 +167,17 @@ src/
 
 ---
 
+## SOAP Integration
+
+### SOAP Endpoint:
+
+- **WSDL**: `https://apps.learnwebservices.com/services/hello?wsdl`
+- **Service**: `HelloEndpointService`
+
+The application integrates with this SOAP service using **Apache Camel CXF**. The SOAP response is dynamically populated using data fetched from the Random User API when needed.
+
+---
+
 ## Contributing
 
 1. Fork the repository.
@@ -155,4 +193,3 @@ src/
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
-
